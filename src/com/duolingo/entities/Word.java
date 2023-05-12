@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class Word {
     private String lemma;
 
-    private char initial;
+    private String initial;
     private String category;
     private ArrayList<String> definition = new ArrayList<>();
 
     public Word(String lemma, String category) {
         this.lemma = lemma;
-        this.initial = lemma.charAt(0);
+        this.initial = String.valueOf(lemma.charAt(0));
         this.category = category;
     }
 
@@ -19,7 +19,7 @@ public class Word {
         return this.lemma;
     }
 
-    public char getInitial() {
+    public String getInitial() {
         return this. initial;
     }
 
@@ -44,7 +44,7 @@ public class Word {
 
     @Override
     public String toString() {
-        String msg = lemma + "\n" +
+        String msg ="\n" + lemma + "\n" +
                 "---------------------------------\n" +
                 "* Categoría: " + category + "\n" +
                 "* Definición:\n" + displayDefinitions();
