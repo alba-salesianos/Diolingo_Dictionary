@@ -4,16 +4,23 @@ import java.util.ArrayList;
 
 public class Word {
     private String lemma;
+
+    private char initial;
     private String category;
     private ArrayList<String> definition = new ArrayList<>();
 
     public Word(String lemma, String category) {
         this.lemma = lemma;
+        this.initial = lemma.charAt(0);
         this.category = category;
     }
 
     public String getLemma() {
         return this.lemma;
+    }
+
+    public char getInitial() {
+        return this. initial;
     }
 
     public String getCategory() {
