@@ -37,7 +37,6 @@ public class Word {
 
     public String displayDefinitions(){
         String msg = "  - ";
-
         msg += definition.toString().replace("[","").replace("]","").replace(",","\n  -");
         return msg;
     }

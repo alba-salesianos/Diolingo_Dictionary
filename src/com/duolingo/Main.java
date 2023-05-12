@@ -17,13 +17,12 @@ public class Main {
 
 
 
-
-        System.out.println(word);
         dictionary.addToDictionary(word);
         dictionary.addToDictionary(word2);
         dictionary.addToDictionary(word3);
         dictionary.addToDictionary(word4);
         System.out.println(word.getInitial());
+
 
         System.out.println(dictionary.displayInitialList());
 
