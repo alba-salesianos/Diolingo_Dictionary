@@ -24,7 +24,11 @@ public class Tests {
         System.out.println(word.getInitial());
 
 
-        System.out.println(dictionary.displayWords(word));
+        System.out.println(dictionary.displayWords("B"));
+        dictionary.deleteWord("Banco");
+
+        System.out.println("\n\n\n");
+        System.out.println(dictionary.displayWords("B"));
         //System.out.println(dictionary.displayInitials());
     }
 }

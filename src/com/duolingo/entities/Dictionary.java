@@ -17,9 +17,20 @@ public class Dictionary {
         }
     }
 
+    public void deleteWord(String word) {
+        Iterator<Word> initialsIterator =  wordsList.get(word.substring(0,1)).iterator();
 
-    public String displayWords(Word word) {
-        return wordsList.get(word.getInitial()).toString().replace("{", "").replace("}", "");
+        while(initialsIterator.hasNext()) {
+            initialsIterator.next();
+            if(initialsIterator.next().getLemma().equals(word)) {
+                initialsIterator.remove();
+                System.out.println("Se ha eliminado la palabra.");
+            }
+        }
+    }
+
+    public String displayWords(String initial) {
+        return wordsList.get(initial).toString().replace("{", "").replace("}", "");
     }
 
     public String displayInitials(){

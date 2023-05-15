@@ -11,12 +11,7 @@ public class Main {
 
         int option = -1;
         Scanner keyboard = new Scanner(System.in);
-        String userLemma;
-        String userCategory;
-        String userDefinition;
-        boolean definitionStop = true;
-        boolean wrongAnswerStop = true;
-        String definitionAnswer;
+
 
 
         while (option != 5) {
@@ -42,8 +37,15 @@ public class Main {
 
             switch (option) {
                 case 1:
+                    String userLemma;
+                    String userCategory;
+                    String userDefinition;
+                    boolean definitionStop = true;
+                    boolean wrongAnswerStop = true;
+                    String definitionAnswer;
+
                     System.out.println("Inserte la palabra que quiere introducir en el diccionario:");
-                    userLemma = keyboard.nextLine();
+                    userLemma = keyboard.nextLine().trim().toLowerCase();
 
                     System.out.println("Inserte el tipo de la palabra (sustantivo, adjetivo, etc.):");
                     userCategory = keyboard.nextLine();
@@ -77,19 +79,28 @@ public class Main {
 
                 case 2:
                     System.out.println("¿Qué palabra quiere eliminar?");
+                    // TODO: hacer el método para eliminar con remove (el que no tire exepción)
                     break;
 
 
                 case 3:
+                    // TODO: hacer el método exists
 
                     break;
 
 
                 case 4:
+                    String userInitial;
+
+                    System.out.println("Introduzca la inicial de las palabras que quiere mostrar:");
+                    userInitial = keyboard.nextLine().toLowerCase();
+
+                    englishDictionary.displayWords(userInitial);
                     break;
 
 
                 case 5:
+                    System.out.println(englishDictionary.displayInitials());
                     break;
 
 
