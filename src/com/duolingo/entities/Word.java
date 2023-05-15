@@ -20,7 +20,7 @@ public class Word {
     }
 
     public String getInitial() {
-        return this. initial;
+        return this.initial;
     }
 
     public String getCategory() {

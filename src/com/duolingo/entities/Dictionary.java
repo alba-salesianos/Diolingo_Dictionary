@@ -1,5 +1,7 @@
 package com.duolingo.entities;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.*;
 
 public class Dictionary {
@@ -16,9 +18,13 @@ public class Dictionary {
     }
 
 
-    public String displayInitialList() {
-        String msg = "Palabras con la letra ";
-        msg += wordsList.toString().replace("{", "").replace("}", "").replace("], ", "\n\nPalabras con la letra ");
+    public String displayWords(Word word) {
+        return wordsList.get(word.getInitial()).toString().replace("{", "").replace("}", "");
+    }
+
+    public String displayInitials(){
+        String msg = "- ";
+        msg += wordsList.keySet().toString().replace("[","").replace("]","").replace(",","\n-");
         return msg;
     }
 

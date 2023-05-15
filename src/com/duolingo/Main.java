@@ -24,7 +24,9 @@ public class Main {
         System.out.println(word.getInitial());
 
 
-        System.out.println(dictionary.displayInitialList());
+        System.out.println(dictionary.displayWords(word));
+        //System.out.println(dictionary.displayInitials());
+
 
 
 
