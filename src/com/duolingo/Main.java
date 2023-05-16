@@ -14,7 +14,7 @@ public class Main {
 
 
 
-        while (option != 5) {
+        while (option != 6) {
 
             String boxGraphic = "\n╔═════════════════════════════════════════╗";
             boxGraphic += "\n          \uD83E\uDD89 D U O L I N G O \uD83E\uDD89          ";
@@ -84,7 +84,6 @@ public class Main {
                     userLemma = keyboard.nextLine();
 
                     englishDictionary.deleteWord(userLemma);
-                    //TODO: esto explota
                     break;
 
 
@@ -109,7 +108,6 @@ public class Main {
 
                     System.out.println(englishDictionary.displayWords(userInitial));
                     break;
-                    // TODO: por alguna razón con esto el programa se termina, también terminaba en el caso 5
 
 
                 case 6:

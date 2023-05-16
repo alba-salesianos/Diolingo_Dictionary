@@ -21,7 +21,6 @@ public class Dictionary {
         Iterator<Word> initialsIterator =  wordsList.get(word.substring(0,1)).iterator();
 
         while(initialsIterator.hasNext()) {
-            initialsIterator.next();
             if(initialsIterator.next().getLemma().equals(word)) {
                 initialsIterator.remove();
                 System.out.println("Se ha eliminado la palabra.");
