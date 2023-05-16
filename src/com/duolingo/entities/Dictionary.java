@@ -19,36 +19,25 @@ public class Dictionary {
         }
     }
 
-    public void deleteWord(String word) {
-        if (wordsList.get(word.substring(0, 1)) == null) {
-            System.out.println("Esta palabra no está en el diccionario.");
-        } else {
-        Iterator<Word> initialsIterator = wordsList.get(word.substring(0, 1)).iterator();
-        while (initialsIterator.hasNext()) {
+    public String deleteWord(String word) {
+        String msg = "This word is not in the dictionary.";
 
+        if (wordsList.get(word.substring(0, 1)) != null) {
+            Iterator<Word> initialsIterator = wordsList.get(word.substring(0, 1)).iterator();
+            while (initialsIterator.hasNext()) {
                 if (initialsIterator.next().getLemma().equals(word)) {
                     initialsIterator.remove();
-                    System.out.println("Se ha eliminado la palabra.");
-                } else {
-                    System.out.println("No se ha encontrado la palabra.");
+                    msg = "Word deleted successfully.";
                 }
             }
         }
+        return msg;
     }
 
     public String wordExists(String word) {
-        String msg = null;
-        if (wordsList.get(word.substring(0, 1)) == null) {
-            msg = "Esta palabra no está en el diccionario.";
-        } else {
-            for (Word item : wordsList.get(word.substring(0, 1))
-            ) {
-                if (wordsList.get(word.substring(0, 1)).contains(item)) {
-                    msg = "Esta palabra está en el diccionario.";
-                } else {
-                    msg = "Esta palabra no está en el diccionario.";
-                }
-            }
+        String msg = "This word is not in the dictionary.";
+        if (wordsList.get(word.substring(0, 1)) != null) {
+            msg = "This word is not in the dictionary.";
         }
         return msg;
     }
@@ -60,7 +49,7 @@ public class Dictionary {
     }
 
     public String displayInitials() {
-        String msg = "- ";
+        String msg = "Available initials:\n- ";
         msg += wordsList.keySet().toString().replace("[", "").replace("]", "").replace(",", "\n-");
         return msg;
     }

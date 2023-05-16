@@ -12,20 +12,19 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
 
 
-
         while (option != 6) {
 
             String boxGraphic = "\n╔═════════════════════════════════════════╗";
             boxGraphic += "\n          \uD83E\uDD89 D U O L I N G O \uD83E\uDD89          ";
             boxGraphic += "\n╟─────────────────────────────────────────╢";
-            boxGraphic += "\n  Seleccione una opción:                    ";
+            boxGraphic += "\n  Choose an option:                        ";
             boxGraphic += "\n║                                         ║";
-            boxGraphic += "\n  1. Añadir palabra                        ";
-            boxGraphic += "\n║ 2. Eliminar palabra                     ║";
-            boxGraphic += "\n  3. Existe palabra                        ";
-            boxGraphic += "\n║ 4. Mostrar iniciales disponibles        ║";
-            boxGraphic += "\n  5. Ver palabras por inicial              ";
-            boxGraphic += "\n║ 6. Cerrar                               ║";
+            boxGraphic += "\n  1. Add word                              ";
+            boxGraphic += "\n║ 2. Delete word                          ║";
+            boxGraphic += "\n  3. Check if word exists                   ";
+            boxGraphic += "\n║ 4. Show existing initials               ║";
+            boxGraphic += "\n  5. Show words by initials                ";
+            boxGraphic += "\n║ 6. Close                                ║";
             boxGraphic += "\n                                           ";
             boxGraphic += "\n╚═════════════════════════════════════════╝";
 
@@ -40,31 +39,31 @@ public class Main {
                     String userCategory;
                     String userDefinition;
 
-                    System.out.println("Inserte la palabra que quiere introducir en el diccionario:");
+                    System.out.println("Please enter the word you would like to add to the dictionary:");
                     userLemma = keyboard.nextLine().trim().toLowerCase();
 
-                    System.out.println("Inserte el tipo de la palabra (sustantivo, adjetivo, etc.):");
-                    userCategory = keyboard.nextLine();
+                    System.out.println("Enter the category of the word (noun, adjective, verb...):");
+                    userCategory = keyboard.nextLine().toLowerCase();
 
-                    System.out.println("Inserte una definición: ");
-                    userDefinition = keyboard.nextLine();
+                    System.out.println("Enter a definition: ");
+                    userDefinition = keyboard.nextLine().toLowerCase();
 
 
-                    englishDictionary.addToDictionary(userLemma,userCategory,userDefinition);
-                    System.out.println("Palabra añadida.");
+                    englishDictionary.addToDictionary(userLemma, userCategory, userDefinition);
+                    System.out.println("Word added successfully.");
                     break;
 
 
                 case 2:
-                    System.out.println("¿Qué palabra quiere eliminar?");
+                    System.out.println("Which word would you like to delete?");
                     userLemma = keyboard.nextLine();
 
-                    englishDictionary.deleteWord(userLemma);
+                    System.out.println(englishDictionary.deleteWord(userLemma));
                     break;
 
 
                 case 3:
-                    System.out.println("¿Qué palabra quiere buscar?");
+                    System.out.println("Which word would you like to search?");
                     userLemma = keyboard.nextLine();
 
                     System.out.println(englishDictionary.wordExists(userLemma));
@@ -79,7 +78,7 @@ public class Main {
                     String userInitial;
 
                     System.out.println(englishDictionary.displayInitials());
-                    System.out.println("Introduzca la inicial de las palabras que quiere mostrar:");
+                    System.out.println("Please enter the initial of the words you would like to display:");
                     userInitial = keyboard.nextLine().toLowerCase();
 
                     System.out.println(englishDictionary.displayWords(userInitial));
@@ -87,11 +86,11 @@ public class Main {
 
 
                 case 6:
-                    System.out.println("Saliendo...");
+                    System.out.println("Closing the program...");
                     break;
 
                 default:
-                    System.out.println("Opción no válida. Seleccione opción de 1 a 6.");
+                    System.out.println("Wrong option. Please select option 1 to 6.");
                     break;
             }
         }

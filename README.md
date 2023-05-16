@@ -4,6 +4,6 @@ Este proyecto surge de la necesidad de crear un diccionario monolingüe para Duo
 
 ### Clases
 
-* [Ejecutable(Main)](src/com/duolingo/docs/Main.md)
+* [Ejecutable (Main)](src/com/duolingo/docs/Main.md)
 * [Word](src/com/duolingo/docs/Dictionary.md)
 * [Dictionary](src/com/duolingo/docs/Dictionary.md)

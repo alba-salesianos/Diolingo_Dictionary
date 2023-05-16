@@ -1,6 +1,7 @@
 package com.duolingo.entities;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Word {
     private String lemma;
@@ -29,7 +30,20 @@ public class Word {
     public String toString() {
         return "\n" + lemma + "\n" +
                 "---------------------------------\n" +
-                "* Categoría: " + category + "\n" +
-                "* Definición: " + definition;
+                "* Category: " + category + "\n" +
+                "* Definition: " + definition;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Word word = (Word) o;
+        return Objects.equals(lemma, word.lemma);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lemma);
     }
 }
