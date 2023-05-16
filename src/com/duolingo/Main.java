@@ -67,18 +67,18 @@ public class Main {
                     System.out.println("¿Qué palabra quiere buscar?");
                     userLemma = keyboard.nextLine();
 
-                    englishDictionary.wordExists(userLemma);
+                    System.out.println(englishDictionary.wordExists(userLemma));
                     break;
 
 
                 case 4:
-
                     System.out.println(englishDictionary.displayInitials());
                     break;
 
                 case 5:
                     String userInitial;
 
+                    System.out.println(englishDictionary.displayInitials());
                     System.out.println("Introduzca la inicial de las palabras que quiere mostrar:");
                     userInitial = keyboard.nextLine().toLowerCase();
 

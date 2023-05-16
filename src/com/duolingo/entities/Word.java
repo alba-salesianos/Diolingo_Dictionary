@@ -30,6 +30,6 @@ public class Word {
         return "\n" + lemma + "\n" +
                 "---------------------------------\n" +
                 "* Categoría: " + category + "\n" +
-                "* Definición:" + definition;
+                "* Definición: " + definition;
     }
 }
