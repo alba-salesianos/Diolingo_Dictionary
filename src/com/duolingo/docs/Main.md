@@ -1,6 +1,8 @@
 # Ejecutable
 
-Este archivo cuenta con el menú principal desde donde se arrancará la app. El menú funciona con un sistema de números para elegir opción. Cuenta con las siguientes funcionalidades:
+Este archivo cuenta con el menú principal desde donde se arrancará la app. El menú, el cual se encuentra en inglés, funciona con un sistema de números para elegir opción. 
+
+Cuenta con las siguientes funcionalidades:
 
 1. Añadir palabra
 2. Eliminar palabra

@@ -1,6 +1,5 @@
 package com.duolingo.entities;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Word {
@@ -28,10 +27,10 @@ public class Word {
 
     @Override
     public String toString() {
-        return "\n" + lemma + "\n" +
+        return "\n" + this.lemma + "\n" +
                 "---------------------------------\n" +
-                "* Category: " + category + "\n" +
-                "* Definition: " + definition;
+                "* Category: " + this.category + "\n" +
+                "* Definition: " + this.definition;
     }
 
     @Override
