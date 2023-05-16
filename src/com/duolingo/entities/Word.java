@@ -7,12 +7,13 @@ public class Word {
 
     private String initial;
     private String category;
-    private ArrayList<String> definition = new ArrayList<>();
+    private String definition;
 
-    public Word(String lemma, String category) {
+    public Word(String lemma, String category, String definition) {
         this.lemma = lemma;
         this.initial = String.valueOf(lemma.charAt(0));
         this.category = category;
+        this.definition = definition;
     }
 
     public String getLemma() {
@@ -23,30 +24,12 @@ public class Word {
         return this.initial;
     }
 
-    public String getCategory() {
-        return this.category;
-    }
-
-    public ArrayList<String> getDefinition() {
-        return this.definition;
-    }
-
-    public void addDefinition(String definitions){
-        definition.add(definitions);
-    }
-
-    public String displayDefinitions(){
-        String msg = "  - ";
-        msg += definition.toString().replace("[","").replace("]","").replace(",","\n  -");
-        return msg;
-    }
 
     @Override
     public String toString() {
-        String msg ="\n" + lemma + "\n" +
+        return "\n" + lemma + "\n" +
                 "---------------------------------\n" +
                 "* Categoría: " + category + "\n" +
-                "* Definición:\n" + displayDefinitions();
-        return msg;
+                "* Definición:" + definition;
     }
 }

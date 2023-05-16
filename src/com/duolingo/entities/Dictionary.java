@@ -7,13 +7,15 @@ import java.util.*;
 public class Dictionary {
     private Map<String, Set<Word>> wordsList = new HashMap<>();
 
-    public void addToDictionary(Word word) {
-        if (wordsList.containsKey(word.getInitial())) {
-            wordsList.get(word.getInitial()).add(word);
+    public void addToDictionary(String lemma, String category, String definition) {
+        Word newWord = new Word(lemma, category, definition);
+
+        if (wordsList.containsKey(newWord.getInitial())) {
+            wordsList.get(newWord.getInitial()).add(newWord);
         } else {
             Set<Word> newSet = new HashSet<>();
-            wordsList.put(word.getInitial(), newSet);
-            wordsList.get(word.getInitial()).add(word);
+            wordsList.put(newWord.getInitial(), newSet);
+            wordsList.get(newWord.getInitial()).add(newWord);
         }
     }
 

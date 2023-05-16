@@ -1,7 +1,6 @@
 package com.duolingo;
 
 import com.duolingo.entities.Dictionary;
-import com.duolingo.entities.Word;
 
 import java.util.Scanner;
 
@@ -40,9 +39,6 @@ public class Main {
                     String userLemma;
                     String userCategory;
                     String userDefinition;
-                    boolean definitionStop = true;
-                    boolean wrongAnswerStop = true;
-                    String definitionAnswer;
 
                     System.out.println("Inserte la palabra que quiere introducir en el diccionario:");
                     userLemma = keyboard.nextLine().trim().toLowerCase();
@@ -50,31 +46,11 @@ public class Main {
                     System.out.println("Inserte el tipo de la palabra (sustantivo, adjetivo, etc.):");
                     userCategory = keyboard.nextLine();
 
-                    Word newWord = new Word(userLemma,userCategory);
-
                     System.out.println("Inserte una definición: ");
                     userDefinition = keyboard.nextLine();
-                    newWord.addDefinition(userDefinition);
-
-                    /*while(definitionStop){
 
 
-                        *//*while (wrongAnswerStop)
-                            System.out.println("¿Quiere seguir añadiendo definiciones?");
-                            definitionAnswer = keyboard.nextLine().replace("í","i").toLowerCase();
-                            switch (definitionAnswer) {
-                                case "si":
-                                    wrongAnswerStop = false;
-                                    break;
-                                case "no":
-                                    definitionStop = false;
-                                    wrongAnswerStop = false;
-                                default:
-                                    System.out.println("Sí o no.");
-                            }
-                        }*/
-
-                    englishDictionary.addToDictionary(newWord);
+                    englishDictionary.addToDictionary(userLemma,userCategory,userDefinition);
                     System.out.println("Palabra añadida.");
                     break;
 
