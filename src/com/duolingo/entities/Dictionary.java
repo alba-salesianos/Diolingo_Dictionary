@@ -25,6 +25,19 @@ public class Dictionary {
             if(initialsIterator.next().getLemma().equals(word)) {
                 initialsIterator.remove();
                 System.out.println("Se ha eliminado la palabra.");
+            } else {
+                System.out.println("No se ha encontrado la palabra.");
+            }
+        }
+    }
+    
+    public void wordExists(String word){
+        for (Word item: wordsList.get(word.substring(0,1))
+             ) {
+            if(wordsList.get(word.substring(0,1)).contains(item)) {
+                System.out.println("Esta palabra está en el diccionario.");
+            } else {
+                System.out.println("Esta palabra no está en el diccionario.");
             }
         }
     }

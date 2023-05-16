@@ -29,6 +29,7 @@ public class Tests {
 
         System.out.println("\n\n\n");
         System.out.println(dictionary.displayWords("B"));
+        dictionary.wordExists("Bebé");
         //System.out.println(dictionary.displayInitials());
     }
 }

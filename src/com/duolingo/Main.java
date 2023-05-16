@@ -52,13 +52,14 @@ public class Main {
 
                     Word newWord = new Word(userLemma,userCategory);
 
-                    while(definitionStop){
-                        userDefinition = "";
-                        System.out.println("Inserte una definición: ");
-                        userDefinition = keyboard.nextLine();
-                        newWord.addDefinition(userDefinition);
+                    System.out.println("Inserte una definición: ");
+                    userDefinition = keyboard.nextLine();
+                    newWord.addDefinition(userDefinition);
 
-                        while (wrongAnswerStop)
+                    /*while(definitionStop){
+
+
+                        *//*while (wrongAnswerStop)
                             System.out.println("¿Quiere seguir añadiendo definiciones?");
                             definitionAnswer = keyboard.nextLine().replace("í","i").toLowerCase();
                             switch (definitionAnswer) {
@@ -71,41 +72,52 @@ public class Main {
                                 default:
                                     System.out.println("Sí o no.");
                             }
-                        }
+                        }*/
 
                     englishDictionary.addToDictionary(newWord);
+                    System.out.println("Palabra añadida.");
                     break;
 
 
                 case 2:
                     System.out.println("¿Qué palabra quiere eliminar?");
-                    // TODO: hacer el método para eliminar con remove (el que no tire exepción)
+                    userLemma = keyboard.nextLine();
+
+                    englishDictionary.deleteWord(userLemma);
+                    //TODO: esto explota
                     break;
 
 
                 case 3:
-                    // TODO: hacer el método exists
+                    System.out.println("¿Qué palabra quiere buscar?");
+                    userLemma = keyboard.nextLine();
 
+                    englishDictionary.wordExists(userLemma);
                     break;
 
 
                 case 4:
+
+                    System.out.println(englishDictionary.displayInitials());
+                    break;
+
+                case 5:
                     String userInitial;
 
                     System.out.println("Introduzca la inicial de las palabras que quiere mostrar:");
                     userInitial = keyboard.nextLine().toLowerCase();
 
-                    englishDictionary.displayWords(userInitial);
+                    System.out.println(englishDictionary.displayWords(userInitial));
                     break;
+                    // TODO: por alguna razón con esto el programa se termina, también terminaba en el caso 5
 
 
-                case 5:
-                    System.out.println(englishDictionary.displayInitials());
+                case 6:
+                    System.out.println("Saliendo...");
                     break;
-
 
                 default:
-                    System.out.println("Opción no válida. Seleccione opción de 1 a 5.");
+                    System.out.println("Opción no válida. Seleccione opción de 1 a 6.");
                     break;
             }
         }
